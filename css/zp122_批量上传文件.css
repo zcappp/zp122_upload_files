@@ -1,0 +1,65 @@
+module.exports=`
+/**/
+
+.zp122 {
+    max-width: 500px;
+}
+
+.zp122 input {
+    display: none;
+}
+
+.zp122 .zbtn {
+    margin: 5px;
+}
+
+.zp122D {
+    padding: 5px 0px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.zp122D svg,
+.zp122U svg {
+    fill: lightgrey;
+    margin: 0px 5px;
+}
+
+.zp122D svg:hover {
+    fill: rgb(9, 187, 7);
+}
+
+.zp122D .zp118handler {
+    cursor: move;
+}
+
+.zp122D .zp118del {
+    float: right;
+    cursor: pointer;
+}
+
+.zp122Drag {
+    z-index: 99;
+    border: 1px solid #d5d5d5;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .2), 0 -5px 5px -5px rgba(0, 0, 0, .2);
+    background-color: white;
+}
+
+.zp122Drop {
+    background-color: gainsboro;
+}
+
+.zp122Drop * {
+    display: none;
+}
+
+.zp122U {
+    color: gray;
+}
+
+.zp122U i {
+    float: right;
+    background: gainsboro;
+}
+
+`
