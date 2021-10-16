@@ -10,7 +10,7 @@ function render(ref) {
         uploaded = []
     }
     return <React.Fragment>
-        <input onChange={e => onChange(ref, e)} type="file"/>
+        <input onChange={e => onChange(ref, e)} type="file" multiple="multiple"/>
         <button onClick={e => ref.container.firstChild.click()} className="zbtn zellipsis">{EL.upload}&nbsp;{ref.props.label || "上传文件"}</button>
         {ref.uploading.map((a, i) => <div className={"zp122U zp122_" + i} key={i}>{EL.spin}{a}<i></i></div>)}
         {uploaded.map((a, i) => <div className="zp122D" key={a + i}>
