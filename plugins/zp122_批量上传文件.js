@@ -23,7 +23,7 @@ function render(ref) {
 function onInit(ref) {
     const { id, exc, props, render } = ref
     ref.uploading = []
-    exc('load("//z.zcwebs.cn/vendor/Sortable_1.13.0.js")', {}, () => {
+    exc('load("//z.zccdn.cn/vendor/Sortable_1.13.0.js")', {}, () => {
         new Sortable(ref.container, {
             animation: 150,
             forceFallback: true,
