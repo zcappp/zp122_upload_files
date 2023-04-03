@@ -20,7 +20,7 @@ function render(ref) {
     </React.Fragment>
 }
 
-function onInit(ref) {
+function init(ref) {
     const { id, exc, props, render } = ref
     ref.uploading = []
     exc('load("//z.zccdn.cn/vendor/Sortable_1.13.0.js")', {}, () => {
@@ -84,7 +84,7 @@ $plugin({
         label: "[上传文件]文本"
     }],
     render,
-    onInit,
+    init,
     css
 })
 
