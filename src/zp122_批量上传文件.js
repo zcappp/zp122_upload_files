@@ -1,5 +1,5 @@
 import React from "react"
-import css from "../css/zp122_批量上传文件.css"
+import css from "./zp122_批量上传文件.css"
 
 function render(ref) {
     const { exc, render, props } = ref
