@@ -11,7 +11,7 @@ function render(ref) {
     }
     return <React.Fragment>
         <input onChange={e => onChange(ref, e)} type="file" multiple="multiple"/>
-        <button onClick={e => ref.container.firstChild.click()} className="zbtn zellipsis">{EL.upload}&nbsp;{ref.props.label || "上传文件"}</button>
+        <button onClick={e => ref.container.firstChild.click()} className="zbtn zellipsis">{EL.upload}&nbsp;{props.label || "上传文件"}</button>
         {ref.uploading.map((a, i) => <div className={"zp122U zp122_" + i} key={i}>{EL.spin}{a}<i></i></div>)}
         {uploaded.map((a, i) => <div className="zp122D" key={a + i}>
             {EL.handle}<a href={a}>{a.split("/")[a.split("/").length - 1]}</a>
@@ -21,7 +21,8 @@ function render(ref) {
 }
 
 function init(ref) {
-    const { id, exc, props, render } = ref
+    const { getForm, id, exc, props, render } = ref
+    if (!getForm) return exc('warn("请置于表单容器中")')
     ref.uploading = []
     exc('load("//z.zccdn.cn/vendor/Sortable_1.13.0.js")', {}, () => {
         new Sortable(ref.container, {
@@ -29,7 +30,7 @@ function init(ref) {
             forceFallback: true,
             fallbackTolerance: 5,
             onSort: e => {
-                let arr = ref.getForm(props.dbf)
+                let arr = getForm(props.dbf)
                 if (!Array.isArray(arr)) arr = []
                 arr.splice(e.newDraggableIndex, 0, arr.splice(e.oldDraggableIndex, 1)[0])
                 ref.setForm(props.dbf, arr)
